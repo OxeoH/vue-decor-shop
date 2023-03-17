@@ -1,16 +1,17 @@
 <template>
-    <nav class="nav">
-        <div class="nav__logo nav__btns">
-            Logo
-        </div>
-        <div class="nav__links ">
-            <div class="nav__links-link nav__btns">Главная</div>
-            <div class="nav__links-link nav__btns">Каталог</div>
-            <div class="nav__links-link nav__btns">Отзывы</div>
-            <div class="nav__links-link nav__btns">О компании</div>
-        </div>
-        <div class="nav__cart nav__btns">Корзина</div>
-    </nav>
+    <div class="plate">
+        <nav class="nav">
+            <router-link to="/home" class="nav__logo">
+                <img src="@/assets/logo.png" alt="Terrazzo Logo">
+            </router-link>
+            <div class="nav__links ">
+                <router-link to="/" class="nav__links-link nav__btns">Главная</router-link>
+                <router-link to="/catalog" class="nav__links-link nav__btns">Каталог</router-link>
+                <router-link to="/about" class="nav__links-link nav__btns">О компании</router-link>
+            </div>
+            <router-link to="/cart" class="nav__cart nav__btns">Корзина</router-link>
+        </nav>
+    </div>
 </template>
 
 <script>
@@ -20,31 +21,52 @@
 </script>
 
 <style lang="scss" scoped>
+    @import "@/styles/variables.scss";
+    .plate{
+        position: fixed;
+        z-index: 5;
+        background-color:darkslategrey;
+        width: 80vw;
+        top: 60px;
+        left: 50%;
+        transform:translate(-50%, -50%);
+        padding-top: 60px;
+        border-radius: 14px;
+    }
     .nav{
         background-color: lightgray;
-
-        position: absolute;
-        z-index: 5;
+        box-shadow: 2px 2px 6px gray;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
         padding: 0 4rem;
-        width: 80%;
-        top: 10%;
-        left: 50%;
-        transform:translate(-50%, -50%);
         border-radius: 14px;
-
         &__links{
             display: flex;
             flex-direction: row;
         }
 
         &__btns{
-            padding: 40px;
+            padding: 30px 50px;
+            border-radius: 14px;
+            margin-left: 20px;
+            color: $gold;
+            font-weight: 700;
+            &:first-child{
+                margin-left: 0;
+            }
             &:hover{
-                background-color: rgb(226, 203, 207);
+                background-color: $gold;
+                color:white;
+            }
+        }
+
+        &__logo{
+            img{
+                width: 50%;
+                object-fit: contain;
+                transform:translate(50%, 0);
             }
         }
     }

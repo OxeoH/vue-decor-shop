@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import MainPage from '@/pages/MainPage'
+import HomePage from '@/pages/HomePage'
 import AboutPage from '@/pages/AboutPage'
 import CatalogPage from '@/pages/CatalogPage'
 import CartPage from '@/pages/CartPage'
@@ -10,7 +10,7 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: MainPage
+    component: HomePage
   },
   {
     path: '/cart',
@@ -23,7 +23,7 @@ const routes = [
     component: CatalogPage
   },
   {
-    path: '/',
+    path: '/about',
     name: 'about',
     component: AboutPage
   },
